@@ -1,0 +1,73 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+package-lock.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+.env
+.venv/
+env/
+venv/
+env.bak/
+venv.bak/
+
+# Packaging / build
+dist/
+build/
+*.egg-info/
+.eggs/
+*.egg
+.wheels/
+*.manifest
+*.spec
+
+# Tests / coverage
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.pytest_cache/
+.hypothesis/
+
+# Django / Flask / etc.
+*.log
+db.sqlite3
+instance/
+.webassets-cache
+.scrapy/
+
+# Docs
+docs/_build/
+site/
+
+# Type checking
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# IDE / Editor
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Local configs / secrets
+*.local
+*.env.*
+*.pem
+*.key
+*.crt
+*.p12
