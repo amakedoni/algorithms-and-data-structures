@@ -2,12 +2,14 @@
 #include <stdlib.h>
 #include <time.h>
 
+// Структура узла бинарного дерева
 typedef struct node {
 	int data;
 	struct node* left;
 	struct node* right;
 } node;
 
+// Инициализация нового узла с заданным значением
 node* init(int data) {
 	node* new_node = malloc(sizeof(node));
 	if (new_node == NULL) {
@@ -19,6 +21,7 @@ node* init(int data) {
 	return new_node;
 }
 
+// Добавление узла в бинарное дерево
 node* add_node(int data, node* root) {
 	if (root == NULL) {
 		node* new_node = init(data);
@@ -36,6 +39,7 @@ node* add_node(int data, node* root) {
 	return root;
 }
 
+// Вывод дерева в консоль (визуализация)
 int draw_tree(node* root, int level) {
 	if (root == NULL) {
 		return 1;
@@ -47,6 +51,7 @@ int draw_tree(node* root, int level) {
 	return 1;
 }
 
+// Подсчёт количества узлов в дереве
 int count_nodes(node* root) {
 	if (root == NULL) {
 		return 0;
@@ -54,6 +59,7 @@ int count_nodes(node* root) {
 	return 1 + count_nodes(root->left) + count_nodes(root->right);
 }
 
+// Очистка дерева (освобождение памяти)
 void clear_tree(node* root) {
 	if (root == NULL) {
 		return;
@@ -63,6 +69,7 @@ void clear_tree(node* root) {
 	free(root);
 }
 
+// Удаление узла из дерева
 node* remove_node(node* root, int data) {
 	if (root == NULL) {
 		return NULL;
@@ -100,6 +107,7 @@ node* remove_node(node* root, int data) {
 	return root;
 }
 
+// Вспомогательная функция для проверки листьев на одном уровне
 void check_leafs_on_same_level(node* root, int level, int* first_leaf_level, int* result) {
 	if (root == NULL || *result == 0) {
 		return;
@@ -120,6 +128,7 @@ void check_leafs_on_same_level(node* root, int level, int* first_leaf_level, int
 	}
 }
 
+// Проверка, все ли листья находятся на одном уровне
 int leafs_on_same_level(node* root) {
 	if (root == NULL) {
 		return 1;
@@ -136,22 +145,22 @@ int main(void) {
 	int current_data = 0;
 
 	while (1) {
-		printf("Select operation:\n");
-		printf("1. Print tree\n");
-		printf("2. Add node\n");
-		printf("3. Remove node\n");
-		printf("4. Count nodes\n");
-		printf("5. Check if all leaves are on the same level (variant 11)\n");
-		printf("6. Exit program\n");
+		printf("Выберите операцию:\n");
+		printf("1. Вывести дерево\n");
+		printf("2. Добавить узел\n");
+		printf("3. Удалить узел\n");
+		printf("4. Подсчитать количество узлов\n");
+		printf("5. Проверить, все ли листья на одном уровне (вариант 11)\n");
+		printf("6. Выход из программы\n");
 
 		if (scanf("%d", &operation) != 1) {
-			printf("Invalid input\n");
+			printf("Неверный ввод\n");
 			return 1;
 		}
 
 		if (operation == 1) {
 			if (root == NULL) {
-				printf("Tree is empty\n");
+				printf("Дерево пусто\n");
 			}
 			else {
 				draw_tree(root, 0);
@@ -159,39 +168,39 @@ int main(void) {
 
 		}
 		else if (operation == 2) {
-			printf("Enter value for new node:\n");
+			printf("Введите значение для нового узла:\n");
 			if (scanf("%d", &current_data) != 1) {
-				printf("Invalid input\n");
+				printf("Неверный ввод\n");
 				continue;
 			}
 
 			node* new_root = add_node(current_data, root);
 			if (new_root == NULL && root == NULL) {
-				printf("Memory allocation error\n");
+				printf("Ошибка выделения памяти\n");
 				}
 				else {
 					root = new_root;
 				}
 
 		} else if (operation == 3) {
-			printf("Enter value of node to remove:\n");
+			printf("Введите значение узла для удаления:\n");
 			if (scanf("%d", &current_data) != 1) {
-				printf("Invalid input\n");
+				printf("Неверный ввод\n");
 				continue;
 			}
 			root = remove_node(root, current_data);
 
 		}
 		else if (operation == 4) {
-			printf("Number of nodes: %d\n", count_nodes(root));
+			printf("Количество узлов: %d\n", count_nodes(root));
 
 		}
 		else if (operation == 5) {
 			int ok = leafs_on_same_level(root);
 			if (ok) {
-				printf("All leaves of the tree are on the same level\n");
+				printf("Все листья дерева находятся на одном уровне\n");
 			} else {
-				printf("Leaves of the tree are on different levels\n");
+				printf("Листья дерева находятся на разных уровнях\n");
 			}
 
 			}
@@ -202,7 +211,7 @@ int main(void) {
 
 			}
 			else {
-				printf("Invalid operation\n");
+				printf("Неверная операция\n");
 			}
 	}
 
