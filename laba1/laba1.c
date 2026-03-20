@@ -2,14 +2,12 @@
 #include <stdlib.h>
 #include <time.h>
 
-// Структура узла бинарного дерева
 typedef struct node {
 	int data;
 	struct node* left;
 	struct node* right;
 } node;
 
-// Инициализация нового узла с заданным значением
 node* init(int data) {
 	node* new_node = malloc(sizeof(node));
 	if (new_node == NULL) {
@@ -21,7 +19,6 @@ node* init(int data) {
 	return new_node;
 }
 
-// Добавление узла в бинарное дерево
 node* add_node(int data, node* root) {
 	if (root == NULL) {
 		node* new_node = init(data);
@@ -39,7 +36,6 @@ node* add_node(int data, node* root) {
 	return root;
 }
 
-// Вывод дерева в консоль (визуализация)
 int draw_tree(node* root, int level) {
 	if (root == NULL) {
 		return 1;
@@ -51,7 +47,6 @@ int draw_tree(node* root, int level) {
 	return 1;
 }
 
-// Подсчёт количества узлов в дереве
 int count_nodes(node* root) {
 	if (root == NULL) {
 		return 0;
@@ -59,7 +54,6 @@ int count_nodes(node* root) {
 	return 1 + count_nodes(root->left) + count_nodes(root->right);
 }
 
-// Очистка дерева (освобождение памяти)
 void clear_tree(node* root) {
 	if (root == NULL) {
 		return;
@@ -69,7 +63,6 @@ void clear_tree(node* root) {
 	free(root);
 }
 
-// Удаление узла из дерева
 node* remove_node(node* root, int data) {
 	if (root == NULL) {
 		return NULL;
@@ -107,7 +100,6 @@ node* remove_node(node* root, int data) {
 	return root;
 }
 
-// Вспомогательная функция для проверки листьев на одном уровне
 void check_leafs_on_same_level(node* root, int level, int* first_leaf_level, int* result) {
 	if (root == NULL || *result == 0) {
 		return;
@@ -128,7 +120,6 @@ void check_leafs_on_same_level(node* root, int level, int* first_leaf_level, int
 	}
 }
 
-// Проверка, все ли листья находятся на одном уровне
 int leafs_on_same_level(node* root) {
 	if (root == NULL) {
 		return 1;
