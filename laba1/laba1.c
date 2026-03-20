@@ -33,6 +33,9 @@ node* add_node(int data, node* root) {
 	else if (data < root->data) {
 		root->left = add_node(data, root->left);
 	}
+	else {
+		root->left = add_node(data, root->left);
+	}
 	return root;
 }
 
