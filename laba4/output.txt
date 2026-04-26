@@ -1,0 +1,127 @@
+1 mango 10.5
+OK: узел добавлен
+
+1 apple 1.1
+OK: узел добавлен
+
+1 zebra 9.9
+OK: узел добавлен
+
+1 lemon 2.2
+OK: узел добавлен
+
+1 peach 3.3
+OK: узел добавлен
+
+1 grape 4.4
+OK: узел добавлен
+
+1 orange 5.5
+OK: узел добавлен
+
+1 cherry 6.6
+OK: узел добавлен
+
+1 banana 7.7
+OK: узел добавлен
+
+1 melon 8.8
+OK: узел добавлен
+
+1 kiwi 9.1
+OK: узел добавлен
+
+1 plum 1.2
+OK: узел добавлен
+
+1 berry 2.3
+OK: узел добавлен
+
+1 cocoa 3.4
+OK: узел добавлен
+
+1 delta 4.5
+OK: узел добавлен
+
+1 eagle 5.6
+OK: узел добавлен
+
+1 frost 6.7
+OK: узел добавлен
+
+1 giant 7.8
+OK: узел добавлен
+
+1 hotel 8.9
+OK: узел добавлен
+
+1 ivory 9.0
+OK: узел добавлен
+
+1 joker 3.1
+OK: узел добавлен
+
+1 karma 4.2
+OK: узел добавлен
+
+3
+            zebra 9.900000 (B)
+                plum 1.200000 (R)
+        peach 3.300000 (B)
+            orange 5.500000 (B)
+                melon 8.800000 (R)
+    mango 10.500000 (R)
+            lemon 2.200000 (B)
+        kiwi 9.100000 (B)
+                    karma 4.200000 (R)
+                joker 3.100000 (B)
+            ivory 9.000000 (R)
+                hotel 8.900000 (B)
+grape 4.400000 (B)
+                giant 7.800000 (R)
+            frost 6.700000 (B)
+                eagle 5.600000 (R)
+        delta 4.500000 (B)
+            cocoa 3.400000 (B)
+    cherry 6.600000 (R)
+            berry 2.300000 (B)
+        banana 7.700000 (B)
+            apple 1.100000 (B)
+
+4 lemon
+FOUND: 2.200000
+
+4 zebra
+FOUND: 9.900000
+
+2 peach
+OK: узел удален
+
+2 giant
+OK: узел удален
+
+3
+            zebra 9.900000 (B)
+        plum 1.200000 (B)
+            orange 5.500000 (B)
+                melon 8.800000 (R)
+    mango 10.500000 (R)
+            lemon 2.200000 (B)
+        kiwi 9.100000 (B)
+                    karma 4.200000 (R)
+                joker 3.100000 (B)
+            ivory 9.000000 (R)
+                hotel 8.900000 (B)
+grape 4.400000 (B)
+            frost 6.700000 (B)
+                eagle 5.600000 (R)
+        delta 4.500000 (B)
+            cocoa 3.400000 (B)
+    cherry 6.600000 (R)
+            berry 2.300000 (B)
+        banana 7.700000 (B)
+            apple 1.100000 (B)
+
+4 peach
+NOT FOUND
+
